@@ -1,0 +1,1845 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080808">
+
+<title>ORIAN | عطرك.. بصمتك الملكية</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:Tahoma,Arial,sans-serif;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:#070707;
+  color:#fff;
+  overflow-x:hidden;
+}
+
+button,
+input,
+select,
+textarea{
+  font-family:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+/* ================= HEADER ================= */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(7,7,7,.94);
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid rgba(212,175,55,.2);
+}
+
+.header{
+  max-width:1250px;
+  margin:auto;
+  padding:15px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.logo{
+  font-size:30px;
+  font-weight:bold;
+  letter-spacing:5px;
+  color:#d4af37;
+}
+
+nav{
+  display:flex;
+  gap:28px;
+}
+
+nav a{
+  color:#ddd;
+  font-size:15px;
+  transition:.3s;
+}
+
+nav a:hover{
+  color:#d4af37;
+}
+
+.cart-button{
+  border:1px solid #d4af37;
+  background:#d4af37;
+  color:#080808;
+  border-radius:30px;
+  padding:10px 17px;
+  font-weight:bold;
+  transition:.3s;
+}
+
+.cart-button:hover{
+  transform:translateY(-2px);
+}
+
+/* ================= HERO ================= */
+
+.hero{
+  min-height:650px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:70px 20px;
+  background:
+    radial-gradient(circle at 50% 45%,rgba(212,175,55,.16),transparent 35%),
+    radial-gradient(circle at 10% 20%,rgba(255,255,255,.03),transparent 25%),
+    linear-gradient(135deg,#050505,#15120b,#050505);
+  position:relative;
+  overflow:hidden;
+}
+
+.hero:before{
+  content:"";
+  position:absolute;
+  width:500px;
+  height:500px;
+  border:1px solid rgba(212,175,55,.08);
+  border-radius:50%;
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  max-width:850px;
+}
+
+.hero-small{
+  color:#d4af37;
+  letter-spacing:7px;
+  font-size:14px;
+  margin-bottom:18px;
+}
+
+.hero h1{
+  font-size:clamp(65px,15vw,150px);
+  letter-spacing:18px;
+  line-height:1;
+  text-shadow:0 0 35px rgba(212,175,55,.15);
+}
+
+.hero h2{
+  color:#d4af37;
+  font-size:clamp(23px,5vw,43px);
+  margin:20px 0 10px;
+}
+
+.hero p{
+  color:#aaa;
+  font-size:17px;
+  max-width:600px;
+  margin:0 auto 30px;
+}
+
+.gold-btn{
+  display:inline-block;
+  border:none;
+  background:linear-gradient(135deg,#d4af37,#f2d56b);
+  color:#080808;
+  padding:14px 30px;
+  border-radius:30px;
+  font-weight:bold;
+  transition:.3s;
+}
+
+.gold-btn:hover{
+  transform:translateY(-3px) scale(1.03);
+}
+
+/* ================= GENERAL ================= */
+
+section{
+  max-width:1250px;
+  margin:auto;
+  padding:80px 20px;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:45px;
+}
+
+.section-title h2{
+  color:#d4af37;
+  font-size:38px;
+  margin-bottom:8px;
+}
+
+.section-title p{
+  color:#888;
+}
+
+/* ================= PRODUCTS ================= */
+
+.products{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+}
+
+.card{
+  background:linear-gradient(145deg,#121212,#0d0d0d);
+  border:1px solid rgba(212,175,55,.18);
+  border-radius:20px;
+  overflow:hidden;
+  transition:.35s;
+}
+
+.card:hover{
+  transform:translateY(-8px);
+  border-color:#d4af37;
+  box-shadow:0 20px 50px rgba(0,0,0,.5);
+}
+
+.card-image{
+  height:350px;
+  position:relative;
+  overflow:hidden;
+  background:#161616;
+  cursor:pointer;
+}
+
+.card-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.5s;
+}
+
+.card:hover .card-image img{
+  transform:scale(1.06);
+}
+
+.badge{
+  position:absolute;
+  top:15px;
+  right:15px;
+  z-index:3;
+  background:#d4af37;
+  color:#080808;
+  padding:6px 13px;
+  border-radius:20px;
+  font-size:12px;
+  font-weight:bold;
+}
+
+.card-body{
+  padding:22px;
+}
+
+.card-body h3{
+  font-size:24px;
+  margin-bottom:5px;
+}
+
+.card-type{
+  color:#d4af37;
+  font-size:13px;
+  margin-bottom:12px;
+}
+
+.card-description{
+  color:#999;
+  font-size:14px;
+  min-height:48px;
+}
+
+.price{
+  color:#d4af37;
+  font-size:25px;
+  font-weight:bold;
+  margin:16px 0;
+}
+
+.card-buttons{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:9px;
+}
+
+.details-button{
+  border:1px solid #d4af37;
+  background:transparent;
+  color:#d4af37;
+  border-radius:10px;
+  padding:11px;
+}
+
+.add-button{
+  border:1px solid #d4af37;
+  background:#d4af37;
+  color:#080808;
+  border-radius:10px;
+  padding:11px;
+  font-weight:bold;
+}
+
+/* ================= FEATURES ================= */
+
+.features{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+
+.feature{
+  background:#101010;
+  border:1px solid rgba(212,175,55,.15);
+  border-radius:18px;
+  padding:30px 20px;
+  text-align:center;
+}
+
+.feature-icon{
+  font-size:40px;
+  margin-bottom:10px;
+}
+
+.feature h3{
+  color:#d4af37;
+  margin-bottom:8px;
+}
+
+.feature p{
+  color:#888;
+  font-size:14px;
+}
+
+/* ================= ABOUT ================= */
+
+.about{
+  max-width:850px;
+  text-align:center;
+}
+
+.about p{
+  color:#aaa;
+  font-size:17px;
+  line-height:2;
+}
+
+/* ================= MODAL ================= */
+
+.overlay{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:5000;
+  background:rgba(0,0,0,.85);
+  backdrop-filter:blur(5px);
+  padding:15px;
+  align-items:center;
+  justify-content:center;
+}
+
+.overlay.active{
+  display:flex;
+}
+
+/* ================= DETAILS ================= */
+
+.details{
+  width:min(950px,100%);
+  max-height:92vh;
+  overflow:auto;
+  background:#101010;
+  border:1px solid #d4af37;
+  border-radius:22px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  position:relative;
+}
+
+.close{
+  position:absolute;
+  top:13px;
+  left:13px;
+  z-index:10;
+  width:40px;
+  height:40px;
+  border:none;
+  border-radius:50%;
+  background:#d4af37;
+  color:#000;
+  font-size:25px;
+  font-weight:bold;
+}
+
+.details-photo{
+  min-height:520px;
+  background:#181818;
+}
+
+.details-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.details-info{
+  padding:45px 35px;
+}
+
+.details-info h2{
+  color:#d4af37;
+  font-size:40px;
+  margin-bottom:5px;
+}
+
+.details-tag{
+  color:#888;
+  margin-bottom:20px;
+}
+
+.details-price{
+  color:#d4af37;
+  font-size:32px;
+  font-weight:bold;
+  margin-bottom:20px;
+}
+
+.details-description{
+  color:#bbb;
+  line-height:1.9;
+  margin-bottom:25px;
+}
+
+.details-list{
+  list-style:none;
+  margin-bottom:25px;
+}
+
+.details-list li{
+  padding:10px 0;
+  border-bottom:1px solid #292929;
+  color:#aaa;
+}
+
+.details-list strong{
+  color:#d4af37;
+}
+
+.quantity{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  margin:20px 0;
+}
+
+.quantity button{
+  width:40px;
+  height:40px;
+  border:1px solid #d4af37;
+  background:transparent;
+  color:#d4af37;
+  border-radius:8px;
+  font-size:22px;
+}
+
+.quantity span{
+  min-width:25px;
+  text-align:center;
+  font-size:20px;
+}
+
+/* ================= CART ================= */
+
+.cart{
+  width:min(720px,100%);
+  max-height:92vh;
+  overflow:auto;
+  background:#101010;
+  border:1px solid #d4af37;
+  border-radius:22px;
+  padding:30px;
+  position:relative;
+}
+
+.cart h2{
+  color:#d4af37;
+  margin-bottom:20px;
+}
+
+.cart-item{
+  display:flex;
+  align-items:center;
+  gap:13px;
+  padding:15px 0;
+  border-bottom:1px solid #292929;
+}
+
+.cart-item img{
+  width:70px;
+  height:70px;
+  object-fit:cover;
+  border-radius:10px;
+}
+
+.cart-info{
+  flex:1;
+}
+
+.cart-info h4{
+  margin-bottom:5px;
+}
+
+.cart-info p{
+  color:#d4af37;
+}
+
+.cart-quantity{
+  display:flex;
+  align-items:center;
+  gap:7px;
+}
+
+.cart-quantity button{
+  width:28px;
+  height:28px;
+  border:1px solid #d4af37;
+  background:transparent;
+  color:#d4af37;
+  border-radius:5px;
+}
+
+.remove{
+  border:none;
+  background:transparent;
+  color:#e55;
+  font-size:18px;
+}
+
+.empty{
+  text-align:center;
+  padding:40px 10px;
+  color:#777;
+}
+
+.totals{
+  margin-top:25px;
+  padding-top:20px;
+  border-top:1px solid #333;
+}
+
+.total-row{
+  display:flex;
+  justify-content:space-between;
+  color:#aaa;
+  margin:9px 0;
+}
+
+.total-final{
+  color:#d4af37;
+  font-size:24px;
+  font-weight:bold;
+}
+
+/* ================= FORM ================= */
+
+.checkout{
+  margin-top:30px;
+  padding-top:25px;
+  border-top:1px solid #333;
+}
+
+.checkout h3{
+  color:#d4af37;
+  margin-bottom:15px;
+}
+
+.field{
+  margin-bottom:12px;
+}
+
+.field input,
+.field select,
+.field textarea{
+  width:100%;
+  padding:13px;
+  border-radius:9px;
+  border:1px solid #333;
+  outline:none;
+  background:#181818;
+  color:#fff;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus{
+  border-color:#d4af37;
+}
+
+.field textarea{
+  min-height:90px;
+  resize:vertical;
+}
+
+.whatsapp-btn{
+  width:100%;
+  padding:15px;
+  border:none;
+  border-radius:10px;
+  background:#25d366;
+  color:#fff;
+  font-weight:bold;
+  font-size:16px;
+  margin-top:8px;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+  border-top:1px solid #222;
+  text-align:center;
+  padding:35px 20px;
+  color:#666;
+}
+
+footer strong{
+  color:#d4af37;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:950px){
+
+  .products{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .features{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .details{
+    grid-template-columns:1fr;
+  }
+
+  .details-photo{
+    height:320px;
+    min-height:320px;
+  }
+}
+
+@media(max-width:650px){
+
+  .header{
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+  nav{
+    order:3;
+    width:100%;
+    justify-content:center;
+    gap:17px;
+  }
+
+  .products{
+    grid-template-columns:1fr;
+  }
+
+  .features{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .hero{
+    min-height:570px;
+  }
+
+  .hero h1{
+    letter-spacing:8px;
+  }
+
+  .card-image{
+    height:370px;
+  }
+
+  .details-info{
+    padding:35px 20px;
+  }
+
+  .cart{
+    padding:25px 18px;
+  }
+}
+
+@media(max-width:400px){
+
+  .features{
+    grid-template-columns:1fr;
+  }
+
+  .card-buttons{
+    grid-template-columns:1fr;
+  }
+
+  .cart-item{
+    flex-wrap:wrap;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+  <div class="header">
+
+    <div class="logo">ORIAN</div>
+
+    <nav>
+      <a href="#products">العطور</a>
+      <a href="#features">مميزاتنا</a>
+      <a href="#about">عن ORIAN</a>
+    </nav>
+
+    <button class="cart-button" onclick="openCart()">
+      🛒 السلة
+      <span id="cartCount">0</span>
+    </button>
+
+  </div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <div class="hero-small">
+      LUXURY FRAGRANCE
+    </div>
+
+    <h1>ORIAN</h1>
+
+    <h2>
+      عطرك.. بصمتك الملكية
+    </h2>
+
+    <p>
+      عطور مصممة لمن يريد أن يترك أثرًا لا يُنسى.
+    </p>
+
+    <a href="#products" class="gold-btn">
+      اكتشف المجموعة
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- ================= PRODUCTS ================= -->
+
+<section id="products">
+
+  <div class="section-title">
+
+    <h2>مجموعة ORIAN</h2>
+
+    <p>
+      اختار العطر اللي يشبه شخصيتك
+    </p>
+
+  </div>
+
+  <div class="products" id="productsContainer"></div>
+
+</section>
+
+
+<!-- ================= FEATURES ================= -->
+
+<section id="features">
+
+  <div class="section-title">
+
+    <h2>مميزات ORIAN</h2>
+
+    <p>
+      تجربة مختلفة من أول اختيار العطر لحد استلامه
+    </p>
+
+  </div>
+
+  <div class="features">
+
+    <div class="feature">
+      <div class="feature-icon">🌹</div>
+      <h3>روائح مميزة</h3>
+      <p>
+        اختيارات متنوعة تناسب شخصيات وأذواق مختلفة.
+      </p>
+    </div>
+
+    <div class="feature">
+      <div class="feature-icon">👑</div>
+      <h3>تصميم فاخر</h3>
+      <p>
+        هوية تجمع بين الفخامة والبساطة.
+      </p>
+    </div>
+
+    <div class="feature">
+      <div class="feature-icon">🚚</div>
+      <h3>شحن للمحافظات</h3>
+      <p>
+        حساب الشحن حسب المحافظة مباشرة.
+      </p>
+    </div>
+
+    <div class="feature">
+      <div class="feature-icon">💬</div>
+      <h3>طلب سريع</h3>
+      <p>
+        الطلب يصل مباشرة على واتساب.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+  <div class="about">
+
+    <div class="section-title">
+      <h2>عن ORIAN</h2>
+    </div>
+
+    <p>
+      ORIAN ليست مجرد زجاجة عطر.
+      هي فكرة عن الحضور والثقة والتميز.
+      اختر الرائحة التي تعبّر عنك،
+      واترك بصمتك الخاصة في كل مكان.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- ================= DETAILS ================= -->
+
+<div class="overlay" id="detailsOverlay">
+
+  <div class="details">
+
+    <button class="close" onclick="closeDetails()">
+      ×
+    </button>
+
+    <div class="details-photo">
+
+      <img id="detailsImage" src="" alt="ORIAN">
+
+    </div>
+
+    <div class="details-info">
+
+      <h2 id="detailsName"></h2>
+
+      <div class="details-tag" id="detailsTag"></div>
+
+      <div class="details-price" id="detailsPrice"></div>
+
+      <p
+        class="details-description"
+        id="detailsDescription">
+      </p>
+
+      <ul class="details-list">
+
+        <li>
+          <strong>النفحات:</strong>
+          <span id="detailsNotes"></span>
+        </li>
+
+        <li>
+          <strong>الحجم:</strong>
+          <span id="detailsSize"></span>
+        </li>
+
+        <li>
+          <strong>مناسب لـ:</strong>
+          <span id="detailsGender"></span>
+        </li>
+
+      </ul>
+
+      <div class="quantity">
+
+        <button onclick="detailsQuantity(-1)">
+          −
+        </button>
+
+        <span id="detailsQty">
+          1
+        </span>
+
+        <button onclick="detailsQuantity(1)">
+          +
+        </button>
+
+      </div>
+
+      <button
+        class="gold-btn"
+        style="width:100%;"
+        onclick="addDetailsToCart()">
+
+        أضف للسلة 🛒
+
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- ================= CART ================= -->
+
+<div class="overlay" id="cartOverlay">
+
+  <div class="cart">
+
+    <button class="close" onclick="closeCart()">
+      ×
+    </button>
+
+    <h2>
+      🛒 سلة ORIAN
+    </h2>
+
+    <div id="cartItems"></div>
+
+    <div id="cartTotals"></div>
+
+    <div class="checkout">
+
+      <h3>
+        بيانات التوصيل
+      </h3>
+
+      <div class="field">
+
+        <input
+          id="customerName"
+          type="text"
+          placeholder="الاسم بالكامل">
+
+      </div>
+
+      <div class="field">
+
+        <input
+          id="customerPhone"
+          type="tel"
+          placeholder="رقم الموبايل">
+
+      </div>
+
+      <div class="field">
+
+        <select id="governorate" onchange="updateCart()">
+
+          <option value="">
+            اختر المحافظة
+          </option>
+
+          <option>القاهرة</option>
+          <option>الجيزة</option>
+          <option>القليوبية</option>
+          <option>الإسكندرية</option>
+          <option>الدقهلية</option>
+          <option>الشرقية</option>
+          <option>الغربية</option>
+          <option>المنوفية</option>
+          <option>كفر الشيخ</option>
+          <option>البحيرة</option>
+          <option>دمياط</option>
+          <option>بورسعيد</option>
+          <option>الإسماعيلية</option>
+          <option>السويس</option>
+          <option>الفيوم</option>
+          <option>بني سويف</option>
+          <option>المنيا</option>
+          <option>أسيوط</option>
+          <option>سوهاج</option>
+          <option>قنا</option>
+          <option>الأقصر</option>
+          <option>أسوان</option>
+
+        </select>
+
+      </div>
+
+      <div class="field">
+
+        <textarea
+          id="customerAddress"
+          placeholder="العنوان بالتفصيل">
+        </textarea>
+
+      </div>
+
+      <button
+        class="whatsapp-btn"
+        onclick="sendOrder()">
+
+        إرسال الطلب على واتساب 💬
+
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+  <p>
+    © 2026 <strong>ORIAN</strong>
+  </p>
+
+  <p>
+    عطرك.. بصمتك الملكية 👑
+  </p>
+
+</footer>
+
+
+<script>
+
+/* =====================================================
+   رقم واتساب ORIAN
+   ===================================================== */
+
+const OWNER_WHATSAPP = "201029756386";
+
+
+/* =====================================================
+   المنتجات
+   ===================================================== */
+
+const products = [
+
+  {
+    id:1,
+    name:"ORIAN Black",
+    price:350,
+    tag:"الأكثر مبيعًا",
+    size:"50 ml",
+    gender:"للرجال",
+    notes:"خشبي • دافئ • مسكي • عنبر",
+    description:
+      "عطر بطابع قوي ودافئ، مناسب لمن يحب الحضور الواضح والشخصية القوية.",
+    image:
+      "https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=900&q=85"
+  },
+
+  {
+    id:2,
+    name:"ORIAN Gold",
+    price:550,
+    tag:"Luxury",
+    size:"75 ml",
+    gender:"للجنسين",
+    notes:"عنبر • فانيليا • خشب • مسك",
+    description:
+      "تركيبة بطابع فاخر ودافئ تناسب المناسبات والسهرات.",
+    image:
+      "https://images.unsplash.com/photo-1547887538-e3a2f32cb1cc?auto=format&fit=crop&w=900&q=85"
+  },
+
+  {
+    id:3,
+    name:"ORIAN Rose",
+    price:450,
+    tag:"Women",
+    size:"50 ml",
+    gender:"للنساء",
+    notes:"ورد • زهور • فواكه • مسك",
+    description:
+      "رائحة ناعمة وأنثوية بطابع زهري وفاكهي أنيق.",
+    image:
+      "https://images.unsplash.com/photo-1615634260167-c8cdede054de?auto=format&fit=crop&w=900&q=85"
+  },
+
+  {
+    id:4,
+    name:"ORIAN Noir",
+    price:700,
+    tag:"Premium",
+    size:"75 ml",
+    gender:"للرجال",
+    notes:"عود • خشب • عنبر • توابل",
+    description:
+      "اختيار شرقي قوي لمحبي الروائح العميقة والحضور الفخم.",
+    image:
+      "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=900&q=85"
+  },
+
+  {
+    id:5,
+    name:"ORIAN Silver",
+    price:300,
+    tag:"Fresh",
+    size:"50 ml",
+    gender:"للجنسين",
+    notes:"حمضيات • نعناع • زهور • مسك",
+    description:
+      "عطر منعش وخفيف مناسب للاستخدام اليومي.",
+    image:
+      "https://images.unsplash.com/photo-1595425970377-c9703cf48b6d?auto=format&fit=crop&w=900&q=85"
+  },
+
+  {
+    id:6,
+    name:"ORIAN Royal",
+    price:900,
+    tag:"Royal",
+    size:"100 ml",
+    gender:"للجنسين",
+    notes:"زعفران • عود • عنبر • فانيليا • مسك",
+    description:
+      "اختيار فاخر بطابع شرقي غني ومميز لعشاق الفخامة.",
+    image:
+      "https://images.unsplash.com/photo-1563170351-be82bc888aa4?auto=format&fit=crop&w=900&q=85"
+  }
+
+];
+
+
+/* =====================================================
+   الشحن
+   ===================================================== */
+
+const shippingPrices = {
+
+  "القاهرة":70,
+  "الجيزة":70,
+  "القليوبية":75,
+  "الإسكندرية":85,
+  "الدقهلية":75,
+  "الشرقية":75,
+  "الغربية":75,
+  "المنوفية":75,
+  "كفر الشيخ":80,
+  "البحيرة":80,
+  "دمياط":85,
+  "بورسعيد":85,
+  "الإسماعيلية":85,
+  "السويس":90,
+  "الفيوم":85,
+  "بني سويف":85,
+  "المنيا":95,
+  "أسيوط":100,
+  "سوهاج":105,
+  "قنا":110,
+  "الأقصر":115,
+  "أسوان":125
+
+};
+
+
+/* =====================================================
+   المتغيرات
+   ===================================================== */
+
+let cart = [];
+
+let selectedProduct = null;
+
+let selectedQuantity = 1;
+
+
+/* =====================================================
+   عرض المنتجات
+   ===================================================== */
+
+function renderProducts(){
+
+  const container =
+    document.getElementById("productsContainer");
+
+  container.innerHTML = products.map(product => `
+
+    <div class="card">
+
+      <div
+        class="card-image"
+        onclick="openDetails(${product.id})">
+
+        <span class="badge">
+          ${product.tag}
+        </span>
+
+        <img
+          src="${product.image}"
+          alt="${product.name}">
+
+      </div>
+
+      <div class="card-body">
+
+        <h3>
+          ${product.name}
+        </h3>
+
+        <div class="card-type">
+          ${product.gender} • ${product.size}
+        </div>
+
+        <p class="card-description">
+          ${product.description}
+        </p>
+
+        <div class="price">
+          ${product.price} جنيه
+        </div>
+
+        <div class="card-buttons">
+
+          <button
+            class="details-button"
+            onclick="openDetails(${product.id})">
+
+            التفاصيل
+
+          </button>
+
+          <button
+            class="add-button"
+            onclick="addToCart(${product.id},1)">
+
+            أضف للسلة
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  `).join("");
+
+}
+
+
+/* =====================================================
+   فتح تفاصيل العطر
+   ===================================================== */
+
+function openDetails(id){
+
+  const product =
+    products.find(p => p.id === id);
+
+  if(!product) return;
+
+  selectedProduct = product;
+
+  selectedQuantity = 1;
+
+  document.getElementById("detailsImage").src =
+    product.image;
+
+  document.getElementById("detailsName").textContent =
+    product.name;
+
+  document.getElementById("detailsTag").textContent =
+    product.tag;
+
+  document.getElementById("detailsPrice").textContent =
+    product.price + " جنيه";
+
+  document.getElementById("detailsDescription").textContent =
+    product.description;
+
+  document.getElementById("detailsNotes").textContent =
+    product.notes;
+
+  document.getElementById("detailsSize").textContent =
+    product.size;
+
+  document.getElementById("detailsGender").textContent =
+    product.gender;
+
+  document.getElementById("detailsQty").textContent =
+    selectedQuantity;
+
+  document
+    .getElementById("detailsOverlay")
+    .classList.add("active");
+
+}
+
+
+/* =====================================================
+   غلق التفاصيل
+   ===================================================== */
+
+function closeDetails(){
+
+  document
+    .getElementById("detailsOverlay")
+    .classList.remove("active");
+
+}
+
+
+/* =====================================================
+   كمية المنتج داخل التفاصيل
+   ===================================================== */
+
+function detailsQuantity(change){
+
+  selectedQuantity += change;
+
+  if(selectedQuantity < 1){
+    selectedQuantity = 1;
+  }
+
+  if(selectedQuantity > 20){
+    selectedQuantity = 20;
+  }
+
+  document.getElementById("detailsQty").textContent =
+    selectedQuantity;
+
+}
+
+
+/* =====================================================
+   إضافة المنتج من صفحة التفاصيل
+   ===================================================== */
+
+function addDetailsToCart(){
+
+  if(!selectedProduct) return;
+
+  addToCart(
+    selectedProduct.id,
+    selectedQuantity
+  );
+
+  closeDetails();
+
+  openCart();
+
+}
+
+
+/* =====================================================
+   إضافة للسلة
+   ===================================================== */
+
+function addToCart(id,quantity){
+
+  const product =
+    products.find(p => p.id === id);
+
+  if(!product) return;
+
+  const existing =
+    cart.find(item => item.id === id);
+
+  if(existing){
+
+    existing.quantity += quantity;
+
+  }else{
+
+    cart.push({
+      id:id,
+      quantity:quantity
+    });
+
+  }
+
+  updateCart();
+
+}
+
+
+/* =====================================================
+   فتح السلة
+   ===================================================== */
+
+function openCart(){
+
+  updateCart();
+
+  document
+    .getElementById("cartOverlay")
+    .classList.add("active");
+
+}
+
+
+/* =====================================================
+   غلق السلة
+   ===================================================== */
+
+function closeCart(){
+
+  document
+    .getElementById("cartOverlay")
+    .classList.remove("active");
+
+}
+
+
+/* =====================================================
+   تحديث السلة
+   ===================================================== */
+
+function updateCart(){
+
+  const itemsContainer =
+    document.getElementById("cartItems");
+
+  const count =
+    document.getElementById("cartCount");
+
+  const totalItems =
+    cart.reduce(
+      (sum,item) => sum + item.quantity,
+      0
+    );
+
+  count.textContent = totalItems;
+
+
+  if(cart.length === 0){
+
+    itemsContainer.innerHTML = `
+
+      <div class="empty">
+
+        السلة فاضية 😅
+
+        <br>
+
+        اختار عطرك الأول.
+
+      </div>
+
+    `;
+
+    document.getElementById("cartTotals").innerHTML =
+      "";
+
+    return;
+
+  }
+
+
+  itemsContainer.innerHTML =
+    cart.map(item => {
+
+      const product =
+        products.find(p => p.id === item.id);
+
+      const total =
+        product.price * item.quantity;
+
+      return `
+
+        <div class="cart-item">
+
+          <img
+            src="${product.image}"
+            alt="${product.name}">
+
+          <div class="cart-info">
+
+            <h4>
+              ${product.name}
+            </h4>
+
+            <p>
+              ${total} جنيه
+            </p>
+
+          </div>
+
+          <div class="cart-quantity">
+
+            <button
+              onclick="changeCartQuantity(${product.id},-1)">
+              −
+            </button>
+
+            <span>
+              ${item.quantity}
+            </span>
+
+            <button
+              onclick="changeCartQuantity(${product.id},1)">
+              +
+            </button>
+
+          </div>
+
+          <button
+            class="remove"
+            onclick="removeFromCart(${product.id})">
+
+            🗑️
+
+          </button>
+
+        </div>
+
+      `;
+
+    }).join("");
+
+
+  calculateTotals();
+
+}
+
+
+/* =====================================================
+   تعديل كمية السلة
+   ===================================================== */
+
+function changeCartQuantity(id,change){
+
+  const item =
+    cart.find(item => item.id === id);
+
+  if(!item) return;
+
+  item.quantity += change;
+
+  if(item.quantity <= 0){
+
+    cart =
+      cart.filter(item => item.id !== id);
+
+  }
+
+  updateCart();
+
+}
+
+
+/* =====================================================
+   حذف منتج
+   ===================================================== */
+
+function removeFromCart(id){
+
+  cart =
+    cart.filter(item => item.id !== id);
+
+  updateCart();
+
+}
+
+
+/* =====================================================
+   حساب الإجمالي
+   ===================================================== */
+
+function calculateTotals(){
+
+  let subtotal = 0;
+
+  cart.forEach(item => {
+
+    const product =
+      products.find(p => p.id === item.id);
+
+    subtotal +=
+      product.price * item.quantity;
+
+  });
+
+
+  const governorate =
+    document.getElementById("governorate").value;
+
+  const shipping =
+    shippingPrices[governorate] || 0;
+
+  const total =
+    subtotal + shipping;
+
+
+  document.getElementById("cartTotals").innerHTML = `
+
+    <div class="totals">
+
+      <div class="total-row">
+
+        <span>
+          المنتجات
+        </span>
+
+        <span>
+          ${subtotal} جنيه
+        </span>
+
+      </div>
+
+      <div class="total-row">
+
+        <span>
+          الشحن
+        </span>
+
+        <span>
+
+          ${
+            shipping
+            ? shipping + " جنيه"
+            : "اختر المحافظة"
+          }
+
+        </span>
+
+      </div>
+
+      <div class="total-row total-final">
+
+        <span>
+          الإجمالي
+        </span>
+
+        <span>
+          ${total} جنيه
+        </span>
+
+      </div>
+
+    </div>
+
+  `;
+
+}
+
+
+/* =====================================================
+   إرسال الطلب واتساب
+   ===================================================== */
+
+function sendOrder(){
+
+  if(cart.length === 0){
+
+    alert(
+      "السلة فاضية، اختار منتج الأول."
+    );
+
+    return;
+
+  }
+
+
+  const name =
+    document.getElementById("customerName")
+    .value.trim();
+
+  const phone =
+    document.getElementById("customerPhone")
+    .value.trim();
+
+  const governorate =
+    document.getElementById("governorate")
+    .value;
+
+  const address =
+    document.getElementById("customerAddress")
+    .value.trim();
+
+
+  if(
+    !name ||
+    !phone ||
+    !governorate ||
+    !address
+  ){
+
+    alert(
+      "من فضلك املأ كل بيانات الطلب."
+    );
+
+    return;
+
+  }
+
+
+  let subtotal = 0;
+
+  let productsMessage = "";
+
+
+  cart.forEach(item => {
+
+    const product =
+      products.find(p => p.id === item.id);
+
+    const itemTotal =
+      product.price * item.quantity;
+
+    subtotal += itemTotal;
+
+    productsMessage +=
+      "• " +
+      product.name +
+      " × " +
+      item.quantity +
+      " = " +
+      itemTotal +
+      " جنيه\n";
+
+  });
+
+
+  const shipping =
+    shippingPrices[governorate] || 0;
+
+  const total =
+    subtotal + shipping;
+
+
+  const message =
+
+`👑 طلب جديد من ORIAN
+
+━━━━━━━━━━━━━━
+
+👤 اسم العميل:
+${name}
+
+📱 رقم الهاتف:
+${phone}
+
+📍 المحافظة:
+${governorate}
+
+🏠 العنوان:
+${address}
+
+━━━━━━━━━━━━━━
+
+🧴 المنتجات:
+
+${productsMessage}
+
+━━━━━━━━━━━━━━
+
+💰 قيمة المنتجات:
+${subtotal} جنيه
+
+🚚 الشحن:
+${shipping} جنيه
+
+💵 الإجمالي:
+${total} جنيه
+
+━━━━━━━━━━━━━━
+
+ORIAN
+عطرك.. بصمتك الملكية 👑`;
+
+
+  const url =
+    "https://wa.me/" +
+    OWNER_WHATSAPP +
+    "?text=" +
+    encodeURIComponent(message);
+
+
+  window.open(url,"_blank");
+
+}
+
+
+/* =====================================================
+   إغلاق النوافذ بالضغط خارجها
+   ===================================================== */
+
+document
+  .getElementById("detailsOverlay")
+  .addEventListener("click",function(event){
+
+    if(event.target === this){
+      closeDetails();
+    }
+
+  });
+
+
+document
+  .getElementById("cartOverlay")
+  .addEventListener("click",function(event){
+
+    if(event.target === this){
+      closeCart();
+    }
+
+  });
+
+
+/* =====================================================
+   تشغيل الموقع
+   ===================================================== */
+
+renderProducts();
+
+updateCart();
+
+</script>
+
+</body>
+</html>
